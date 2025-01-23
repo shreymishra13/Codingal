@@ -1,9 +1,10 @@
 import React from 'react'
 
+import ClassNavbar from '../Components/ClassNavbar'
 function Class() {
   return (
     <div>
-      this is class
+      <ClassNavbar/>
     </div>
   )
 }

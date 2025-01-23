@@ -16,7 +16,6 @@ function Posts() {
     try {
       const response = await fetch(`${API_KEY}?_page=${page}&_limit=10`);
       const result = await response.json();
-      console.log(result)
       setData((prevData) => [...prevData, ...result]); // Append new data to existing
       if (result.length < 10) {
         setHasMore(false); // If less than 10 items are returned, no more data
@@ -30,11 +29,23 @@ function Posts() {
 
   // Fetch data whenever page changes
   useEffect(() => {
-    console.log("fetch")
     fetchData();
   }, [page]);
  
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+      const clientHeight = document.documentElement.clientHeight || window.innerHeight;
 
+      if (scrollTop + clientHeight >= scrollHeight - 5 && !loading && hasMore) {
+        setPage((prevPage) => prevPage + 1);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [loading, hasMore]);
      
   return (
     <div>   
@@ -51,11 +62,7 @@ function Posts() {
 
    {loading && <p>Loading...</p>}
 
-{hasMore && !loading && (
-  <button onClick={() => setPage(page+1)}>
-    Load More
-  </button>
-)}
+
 
 {!hasMore && <p>No more data to load.</p>}
 </div>

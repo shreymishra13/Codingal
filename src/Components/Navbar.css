@@ -3,18 +3,126 @@
     /* background-color: rgb(172, 13, 13); */
     /* height: 60px; */
     background-color: white;
-    text-align: center;
+    /* text-align: center; */
     width: 99vw;
     margin: auto;
     padding: 10px;
     box-shadow: 3px 3px 10px black;
     margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     
 }
 #nav img{
     height: 40px;
     background-color: white;
+    margin-left: 2rem;
 }
-h1{
+.nav-items{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    
+}
+
+.nav-item{
+    background-color: white;
+    display: inline-block;
+    margin: 0 5px;
+    font-size: 18px;
+    text-decoration: none;
+
+}
+
+
+.join-btn-div{
+    margin-left: auto;
+    
+    display: flex;
+    justify-content: flex-end;
+    background-color: white;
+   
+}
+.btn-link{
+    background-color: white;
+}
+.menu-icon{
+    display: none;
+    font: 20px;
+}
+.menu-icon i{
+    font-size: 20px;
     background-color: white ;
 }
+.toggled-menu{
+    display: none;
+}
+@media (max-width: 800px) {
+    .nav-items {
+      flex-direction: column;
+      justify-content: center;
+      display: none;
+    }
+    .nav-items.open{
+        display: none;
+    }
+    .nav-item{
+        margin: 5px 0;
+    }
+    .join-btn-div{
+        display: none;
+    }
+    .menu-icon{
+        display: block;
+    }
+
+    .toggled-menu{
+        display: block;
+        height: 100vh;
+        background-color: white;
+        width: 100vw;
+        position: fixed;
+        top: 0;
+      }
+      .toggled-menu img{
+        height: 40px;
+        background-color: white;
+        margin-left: 2rem;
+        margin-top: 20px;
+      }
+      .top-row{
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        margin: auto;
+      }
+      .top-row i{
+        background-color: white;
+      }
+      
+      .toggled-menu ul{
+        margin-top: 20% ;
+        background-color: white;
+    
+      }
+      .third-row{
+        background-color: white;
+      }
+      .toggled-menu ul li{
+        margin: 20px;
+        font-size: 20px;
+        list-style-type: none;
+        background-color: white;
+    
+      }
+    
+
+
+
+
+
+  }
+  
