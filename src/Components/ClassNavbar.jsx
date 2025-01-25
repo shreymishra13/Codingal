@@ -7,9 +7,10 @@ function ClassNavbar() {
 
     const [time, setTime] = useState(0); // Time in seconds
     const [isRunning, setIsRunning] = useState(true);
-    const [isModalOpen, setIsModalOpen] = useState(true)
+    const [isModalOpen, setIsModalOpen] = useState(false)
     const [selectedOption, setSelectedOption] = useState('')
     const [selectedSubOption, setSelectedSubOption] = useState('');
+    const [otherReason, setOtherReason] = useState('');
     useEffect(() => {
         let timer;
         if (isRunning) {
@@ -45,14 +46,35 @@ function ClassNavbar() {
         setSelectedSubOption(event.target.value);
       };
       const endClassHandler=()=>{
-        closeModal();
-        alert(`The class has been ended successfully at ${formatTime(time)}. Reason for class end is : ${selectedOption==='completed'?"Completed":"Aborted : "+ selectedSubOption}`)
+        if(selectedOption===''){
+            alert("Please select the option first")
+        }
+        else if(selectedOption==='aborted' && selectedSubOption===''){
+            alert("Please select the reason to abort the class")
+        }
+        else if(selectedOption==='other' && otherReason===''){
+            alert("Please type the reason to abort the class")
+        }
+        else{
+
+            closeModal();
+            setIsRunning(false);
+            alert(`The class has been ended successfully at ${formatTime(time)}. Reason for class end is : ${selectedOption==='completed'?"Completed":"Aborted : "+ selectedSubOption}`)
+        }
+      }
+      const handleOther =(e)=>{
+        console.log(e.target.value
+        )
+        
       }
     return (
         <div>
             <div id='class-nav'>
+
                 <div className="nav-img">
+          
                     <img src={image} alt="" />
+               
                 </div>
                 <div className='lesson-name'>
                     Trial Lesson Grade (1-3)
@@ -117,6 +139,22 @@ function ClassNavbar() {
                                                 />
                                                 <label htmlFor="no-show">Student didn't show up</label>
                                             </div>
+                                            <div className="option">
+                                                <input
+                                                    type="radio"
+                                                    id="other"
+                                                    name="sub-reason"
+                                                    value="other"
+                                                    checked={selectedSubOption === "other"}
+                                                    onChange={handleSubOptionChange}
+                                                />
+                                                <label htmlFor="other">Other</label>
+                                            </div>
+                                            { selectedSubOption==='other' &&
+                                                <div className="option">
+                                                <textarea required rows="6" cols="30" placeholder='Type here..' onChange={handleOther}></textarea>
+                                            
+                                            </div>}
                                         </div>
                                     )}
                                     

@@ -12,7 +12,11 @@ function Navbar() {
     <>
 
     <div id='nav'>
+    
+
         <img src="https://fastly.codingal.com/images/logos/logos-main/logo-with-text.svg" alt="" />
+
+    
 
         <ul className={`nav-items ${isOpen && 'open' }`}>
           <li className='nav-item'>Courses</li>

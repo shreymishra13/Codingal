@@ -75,10 +75,17 @@
   .btn-container{
     background-color: white;
     display: flex;
-    justify-content: left;
+    justify-content: space-around;
   }
 
   .sub-options{
     margin-left: 30px;
     background-color: white;
+  }
+  textarea{
+    margin-left: 20px;
+    background-color: white;
+    border-radius: 4px;
+    resize: none;
+    padding: 3px;
   }

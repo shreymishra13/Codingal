@@ -3,7 +3,7 @@
     box-shadow: 4px 4px 8px #ff5a43;
     /* border: 2px  solid black; */
     width: 18rem;
-    height: 24rem;
+    height: 20rem;
     text-align: center;
     padding: 10px   ;
     background-color: white;
@@ -29,5 +29,24 @@
 }
 
 .card:hover{
-    box-shadow: 4px 4px 8px #d14937;
+    border: 0.5px solid #ff5a43;
+    background-color: #ff5a43;
+   
+    box-shadow: 5px 5px 10px black;
+   .card-id{
+    color: white;
+    background-color: #ff5a43;
+   }
+   .card-title{
+    color: white;
+    background-color: #ff5a43;
+   }
+   .card-userId{
+    color: white;
+    background-color: #ff5a43;
+   }
+   .card-body{
+    color: white;
+    background-color: #ff5a43;
+   }
 }

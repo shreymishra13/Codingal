@@ -60,7 +60,7 @@ function Posts() {
     
    }
 
-   {loading && <p>Loading...</p>}
+   {loading && <div class="loader"></div>}
 
 
 
