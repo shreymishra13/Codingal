@@ -58,7 +58,10 @@ The application will be available at `http://localhost:3000`.
 
 ## Screenshots
 
-Include screenshots or GIFs showcasing the navbar's responsiveness and functionality.
+
+https://github.com/user-attachments/assets/aeb122cf-d547-4120-ab9a-e01a28197119
+
+
 
 ## Future Enhancements
 
