@@ -1,7 +1,7 @@
 import React from 'react'
-import Navbar from '../Components/Navbar'
-import Button from '../Components/Button'
-import YoutubeVideo from '../Components/YoutubeVideo'
+import Navbar from '../../Components/Navbar/Navbar'
+import Button from '../../Components/Button/Button'
+import YoutubeVideo from '../../Components/YoutubeVideo/YoutubeVideo'
 import './Home.css'
 import { Link } from 'react-router-dom'
 

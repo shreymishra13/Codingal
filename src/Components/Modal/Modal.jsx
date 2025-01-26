@@ -1,6 +1,6 @@
 import React from 'react'
 import './Modal.css'
-import { Link } from 'react-router-dom'
+
 
 function Modal(props) {
  

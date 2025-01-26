@@ -1,6 +1,6 @@
 import React from 'react'
 
-import ClassNavbar from '../Components/ClassNavbar'
+import ClassNavbar from '../../Components/ClassPageNavbar/ClassNavbar'
 function Class() {
   return (
     <div>

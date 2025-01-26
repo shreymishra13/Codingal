@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import image from '../assets/image.png'
-import Button from '../Components/Button'
+import image from '../../assets/image.png'
+import Button from '../Button/Button'
 import './ClassNavbar.css'
 function ClassNavbar() {
 
@@ -66,12 +65,11 @@ function ClassNavbar() {
 
             closeModal();
             setIsRunning(false);
-            alert(`The class has been ended successfully at ${formatTime(time)}. Reason for class end is : ${selectedOption === 'completed' ? "Completed" : "Aborted : " + selectedSubOption + +(otherReason? (otherReason) : '')}`)
+            alert(`The class has been ended successfully at ${formatTime(time)}. Reason for class end is : ${selectedOption === 'completed' ? "Completed" : "Aborted : " + selectedSubOption }`)
         }
     }
     const handleOther = (e) => {
-        // console.log(e.target.value
-        // )
+
         setOtherReason(e.target.value)
 
     }

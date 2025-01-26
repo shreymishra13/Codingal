@@ -1,8 +1,8 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
 
-import Card from '../Components/Card'
-import Navbar from '../Components/Navbar'
+import Card from '../../Components/Card/Card'
+import Navbar from '../../Components/Navbar/Navbar'
 import './Posts.css'
 function Posts() {
   const API_KEY = "https://jsonplaceholder.typicode.com/posts"

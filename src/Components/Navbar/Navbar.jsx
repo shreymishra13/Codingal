@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import './Navbar.css'
-import Button from './Button'
+import Button from '../Button/Button'
 import { Link } from 'react-router-dom'
-import Modal from './Modal'
+import Modal from '../Modal/Modal'
 function Navbar() {
 
   const [isOpen, setIsOpen] = useState(false)
