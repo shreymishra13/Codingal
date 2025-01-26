@@ -50,6 +50,9 @@ function ClassNavbar() {
         setSelectedSubOption(event.target.value);
     };
     const endClassHandler = () => {
+        console.log(selectedOption)
+        console.log(selectedSubOption)
+        console.log(otherReason)
         if (selectedOption === '') {
             alert("Please select the option first")
         }
@@ -63,12 +66,13 @@ function ClassNavbar() {
 
             closeModal();
             setIsRunning(false);
-            alert(`The class has been ended successfully at ${formatTime(time)}. Reason for class end is : ${selectedOption === 'completed' ? "Completed" : "Aborted : " + selectedSubOption}`)
+            alert(`The class has been ended successfully at ${formatTime(time)}. Reason for class end is : ${selectedOption === 'completed' ? "Completed" : "Aborted : " + selectedSubOption + +(otherReason? (otherReason) : '')}`)
         }
     }
     const handleOther = (e) => {
-        console.log(e.target.value
-        )
+        // console.log(e.target.value
+        // )
+        setOtherReason(e.target.value)
 
     }
     return (
