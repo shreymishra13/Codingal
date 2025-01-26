@@ -1,5 +1,6 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
+
 import Card from '../Components/Card'
 import Navbar from '../Components/Navbar'
 import './Posts.css'
@@ -10,19 +11,25 @@ function Posts() {
   const [page, setPage] = useState(1);  
   const [loading, setLoading] = useState(false); 
   const [hasMore, setHasMore] = useState(true); 
+  const [isError, setIsError] = useState(false); 
+ 
   const fetchData = async () => {
     
 
     setLoading(true);
     try {
       const response = await fetch(`${API_KEY}?_page=${page}&_limit=10`);
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
       const result = await response.json();
       setData((prevData) => [...prevData, ...result]); 
       if (result.length < 10) {
         setHasMore(false); 
       }
     } catch (error) {
-      console.error("Error fetching data:", error);
+      setIsError(true)
+      // console.error("Error fetching data:", error);
     } finally {
       setLoading(false);
     }
@@ -48,8 +55,23 @@ function Posts() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [loading, hasMore]);
+
+  if (isError) {
+    return (
+      <div>
+        <Navbar />
+        <div className="error-message">
+          <h1>Check your internet Connection!🛜❌</h1>
+          <p>{isError}</p>
+        </div>
+      </div>
+    );
+  }
+
      
   return (
+
+    
     <div>   
 
     <Navbar/>
