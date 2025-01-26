@@ -11,14 +11,15 @@ function Posts() {
   const [loading, setLoading] = useState(false); 
   const [hasMore, setHasMore] = useState(true); 
   const fetchData = async () => {
-   
+    
+
     setLoading(true);
     try {
       const response = await fetch(`${API_KEY}?_page=${page}&_limit=10`);
       const result = await response.json();
-      setData((prevData) => [...prevData, ...result]); // Append new data to existing
+      setData((prevData) => [...prevData, ...result]); 
       if (result.length < 10) {
-        setHasMore(false); // If less than 10 items are returned, no more data
+        setHasMore(false); 
       }
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -29,6 +30,7 @@ function Posts() {
 
   // Fetch data whenever page changes
   useEffect(() => {
+    console.log("callling useEffect fetch")
     fetchData();
   }, [page]);
  
@@ -60,7 +62,7 @@ function Posts() {
     
    }
 
-   {loading && <div class="loader"></div>}
+   {loading && <div className="loader"></div>}
 
 
 

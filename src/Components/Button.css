@@ -1,4 +1,4 @@
-#btn{
+#btn-solid{
 
     color: #ff5a43;
     border:2px solid #ff5a43;
@@ -11,7 +11,26 @@
 
 }
 
-#btn:hover{
+#btn-solid:hover{
     background-color: #ff5a43; 
     color:white;
+    box-shadow: 3px 3px 4px black ;
+}
+#btn-outlined{
+
+    border:2px solid #ff5a43;
+    border-radius: 5px;
+    font-weight: 600;
+    padding: 10px 20px;
+    margin:0px 0;
+    
+    background-color: #ff5a43; 
+    color:white;
+    
+}
+
+#btn-outlined:hover{
+    color: #ff5a43;
+    background-color: white;
+    box-shadow: 3px 3px 4px  ;
 }

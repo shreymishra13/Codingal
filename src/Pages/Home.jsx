@@ -10,13 +10,19 @@ function Home() {
   return (
     <div id='home-div'>
     <Navbar/>
-   <YoutubeVideo/>
-  
-   <Link to='/class'><Button id="h" value="Join Class"/></Link>
+   
+
+       <YoutubeVideo/> 
+    {/* </div> */}
+    <br />
+   <Link to='/class'><Button type="outline" value="Join Class"/></Link>
+ <br />
+ <br />
    <Link to='/posts'><Button value="Posts"/></Link>
     
-      
     </div>
+   
+      
   )
 }
 

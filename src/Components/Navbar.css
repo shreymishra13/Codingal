@@ -1,9 +1,7 @@
 #nav
 {
-    /* background-color: rgb(172, 13, 13); */
-    /* height: 60px; */
+
     background-color: white;
-    /* text-align: center; */
     width: 99vw;
     margin: auto;
     padding: 10px;
@@ -32,12 +30,15 @@
     margin: 0 5px;
     font-size: 18px;
     text-decoration: none;
+    color: black;
 
-}
+  }
+  .nav-item span{
+    color: black;
+  }
 .nav-item:hover{
   color: #ff5a43;
 }
-
 
 .join-btn-div{
     margin-left: auto;
@@ -60,6 +61,28 @@
 }
 .toggled-menu{
     display: none;
+}
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+   
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+
+  }
 }
 @media (max-width: 800px) {
     .nav-items {
@@ -87,6 +110,11 @@
         width: 100vw;
         position: fixed;
         top: 0;
+        animation: slideDown 0.5s ease-out;
+      }
+      .toggled-menu .slide-up{
+      
+        animation: slideDown 0.5s ease-out;
       }
       .toggled-menu img{
         height: 40px;
@@ -122,6 +150,8 @@
     
       }
     
+
+      
 
 
 
